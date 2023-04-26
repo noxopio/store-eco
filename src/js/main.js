@@ -6,14 +6,21 @@ const overlay = document.querySelector("#overlay");
 const body = document.querySelector("body");
 const gallery = document.querySelector('.gallery-img')
 const punto = document.querySelectorAll('.punto')
+const eco=document.querySelector('#eco');
 
 window.onload = (event) => {
-    
-    overlay.style.display = "none";
-    body.classList.remove("hidden");
- 
+    setTimeout(() => {
+
+        eco.innerText='WELCOME';
+     overlay.addEventListener('click', of)
+    function of() {
+        overlay.style.display = "none";
+        body.classList.remove("hidden");
+
+    };
+
         
-   
+    },400);
   };
 
 
