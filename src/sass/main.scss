@@ -284,6 +284,7 @@ article {
     }
 }
 .location {
+    
     color: #E86424;
     h2 {
         padding-top: 60px;
@@ -307,6 +308,7 @@ h3 {
 
 
 footer {
+   
     background-color: $quaternary-color;
     width: 100%;
     height: auto;
@@ -317,4 +319,13 @@ footer {
         gap: 40px;
         padding: 50px;
     }
+}
+.eco{
+    transition: all ease 400ms;
+    border-radius: 10px;
+    outline: 10px solid #E86424;
+    &:hover{
+        transform: scale(1.1);
+    }
+    
 }

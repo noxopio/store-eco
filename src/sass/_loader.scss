@@ -1,41 +1,63 @@
+@import 'variables';
+
 #overlay {
-    
-  position: fixed; /* Sit on top of the page content */
-  display: block; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
+
+
+  position: fixed;
+  /* Sit on top of the page content */
+  display: block;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
 
-  background-color:($primary-color); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
+  background-color: ($primary-color);
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+  animation: animate 4s linear forwards;
+  animation-delay: calc(0.1s);
 }
 
-#overlay-text{
+#overlay-text {
 
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%,-50%);
-   
-   margin: auto 0;
-   white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin: auto 0;
+  white-space: nowrap;
   font-size: 2rem;
-   color:$quaternary-color;
-   
-   
-   
-   @media (max-width: 720px) {
-   
-      white-space: nowrap;
-      font-size: 2rem;
-      color: #E86424;
-      writing-mode: vertical-lr;
-      text-orientation: upright;
-  
-      
+  color: $quaternary-color;
+
+
+  @media (max-width: 720px) {
+
+    white-space: nowrap;
+    font-size: 1rem;
+    color: #E86424;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+
+
   }
+}
+
+@keyframes animate {
+0%{
+  background-color: black;
+}
+  50%,
+  100% {
+        transform: scale(1.1);
+  }
+
 }

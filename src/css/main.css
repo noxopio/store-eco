@@ -21,6 +21,79 @@
     --borde-negro: #FFFFFF50;
   }
 }
+#overlay {
+  position: fixed;
+  /* Sit on top of the page content */
+  display: block;
+  /* Hidden by default */
+  width: 100%;
+  /* Full width (cover the whole page) */
+  height: 100%;
+  /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFEFE7;
+  /* Black background with opacity */
+  z-index: 2;
+  /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer;
+  /* Add a pointer on hover */
+  animation: animate 4s linear forwards;
+  animation-delay: 0.1s;
+}
+
+#overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto 0;
+  white-space: nowrap;
+  font-size: 2rem;
+  color: #fa9500;
+}
+@media (max-width: 720px) {
+  #overlay-text {
+    white-space: nowrap;
+    font-size: 1rem;
+    color: #E86424;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-color: black;
+  }
+  50%, 100% {
+    transform: scale(1.1);
+  }
+}
+/* Aquí definimos las Custom properties */
+:root {
+  --negro: #393939;
+  --blanco: #ececec;
+  --sombra-ppal: #c9c9c9;
+  --sombra-sec: #ffffff;
+  --borde-negro: #00000050;
+  --marcado: rgb(127, 195, 255);
+  /* Tipografía */
+  --tipo-principal: Helvetica, Arial, sans-serif;
+}
+
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --negro: #ececec;
+    --blanco: #303030;
+    --sombra-ppal: #242424;
+    --sombra-sec: #3c3c3c;
+    --borde-negro: #FFFFFF50;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -340,40 +413,6 @@ h3 {
   font-size: 1.5rem;
 }
 
-#overlay {
-  position: fixed; /* Sit on top of the page content */
-  display: block; /* Hidden by default */
-  width: 100%; /* Full width (cover the whole page) */
-  height: 100%; /* Full height (cover the whole page) */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #FFEFE7; /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-  cursor: pointer; /* Add a pointer on hover */
-}
-
-#overlay-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: auto 0;
-  white-space: nowrap;
-  font-size: 2rem;
-  color: #fa9500;
-}
-@media (max-width: 720px) {
-  #overlay-text {
-    white-space: nowrap;
-    font-size: 2rem;
-    color: #E86424;
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-  }
-}
-
 footer {
   background-color: #fa9500;
   width: 100%;
@@ -388,6 +427,15 @@ footer .social-media {
   align-items: center;
   gap: 40px;
   padding: 50px;
+}
+
+.eco {
+  transition: all ease 400ms;
+  border-radius: 10px;
+  outline: 10px solid #E86424;
+}
+.eco:hover {
+  transform: scale(1.1);
 }
 
 /*# sourceMappingURL=main.css.map */
