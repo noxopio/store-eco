@@ -8,15 +8,12 @@ const gallery = document.querySelector('.gallery-img')
 const punto = document.querySelectorAll('.punto')
 
 window.onload = (event) => {
-    setTimeout(() => {
-     overlay.addEventListener('click', of)
-    function of() {
-        overlay.style.display = "none";
-        body.classList.remove("hidden");
-    };
-
+    
+    overlay.style.display = "none";
+    body.classList.remove("hidden");
+ 
         
-    },200);
+   
   };
 
 
