@@ -10,8 +10,7 @@ const eco = document.querySelector('#eco');
 
 window.onload = (event) => {
     setTimeout(() => {
-        eco.classList.add('eco');  
-        
+        eco.classList.add('eco');          
         eco.innerText = 'ECO-STORE';
         overlay.addEventListener('click', of)
         function of() {
