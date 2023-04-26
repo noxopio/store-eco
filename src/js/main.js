@@ -7,12 +7,12 @@ const body = document.querySelector("body");
 const gallery = document.querySelector('.gallery-img')
 const punto = document.querySelectorAll('.punto')
 
+overlay.style.display = "none";
+body.classList.remove("hidden");
 window.onload = (event) => {
     setTimeout(() => {
      overlay.addEventListener('click', of)
     function of() {
-        overlay.style.display = "none";
-        body.classList.remove("hidden");
     };
 
         
