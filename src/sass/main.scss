@@ -469,5 +469,12 @@ footer {
             }
         }
     }
-
+    .furniture {
+        @extend .healthcare;
+    
+        .produc-card {
+            background-color: $tertiary-color;
+    
+        }
+    }    
 }

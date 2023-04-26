@@ -565,5 +565,9 @@ footer .social-media {
   object-fit: cover;
   border-radius: 6px;
 }
+.product-section .furniture .produc-card,
+.info-section .furniture .produc-card {
+  background-color: #BABD8D;
+}
 
 /*# sourceMappingURL=main.css.map */
