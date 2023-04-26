@@ -1,0 +1,361 @@
+
+@import 'reset';
+@import 'variables';
+@import 'mixins';
+
+
+body {
+    background-color: $primary-color;
+    font-family: $font-stackl;
+
+    svg path {
+        stroke: currentColor;
+    }
+
+}
+.hidden {
+  
+    overflow: hidden;  
+    
+}
+
+nav {
+    width: auto;
+    @include flexCenter(row, space-between, center);
+    color: $primary-text-color;
+    padding: 1rem;
+
+    p {
+        font-size: $paragrap-size;
+        padding-left: 30px;
+    }
+
+    .icons {
+        display: flex;
+        gap: 1rem;
+        @include buttonStyle;
+
+    }
+}
+
+article {
+    @include flexCenter(row, space-between, center);
+    width: auto;
+    color: $primary-text-color;
+    padding-right: 45px;
+    padding-left: 45px;
+    padding: 4.375rem;
+
+    .impact-section {
+
+        @include flexCenter(column, space-evenly, start);
+        padding-top: 3.125rem;
+        gap: 1.5625rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    pcd {
+        padding-left: .3125rem;
+        font-size: $paragrap-size;
+    }
+
+    @include buttonStyle;
+
+    button {
+        width: 12vw;
+        padding: 1.25rem;
+        background-color: $quaternary-color;
+        border-radius: 2.1875rem;
+        color: white;
+        font-size: 1rem;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: all ease 400ms;
+
+        }
+    }
+
+    img {
+        width: 25vw;
+        border-radius: 1.1875rem;
+    }
+}
+
+.product-section,
+.info-section {
+    width: auto;
+    height: auto;
+    padding: 60px;
+
+    h2 {
+        color: $primary-text-color;
+        font-size: 2rem;
+    }
+
+    .healthcare {
+        padding-bottom: 60px;
+
+        h2 {
+            font-weight: 300;
+            padding-bottom: 3.75rem;
+        }
+
+        .card-section {
+
+            @include flexCenter(row, space-evenly, center);
+
+            flex-wrap: wrap;
+            gap: 80px 200px;
+            width: auto;
+            height: auto;
+
+        }
+
+        .produc-card {
+            @include neo(1, 1em, 1em);
+            width: 18vw;
+            height: 70vh;
+            background-color: $secundary-color;
+            color: $primary-text-color;
+            padding: 5px;
+            border-radius: 8px;
+
+            .icon {
+                width: 100%;
+                display: flex;
+                justify-content: end;
+                padding-bottom: 12px;
+
+
+                svg {
+                    width: 28px;
+                    height: 28px;
+                    color: red;
+                }
+            }
+
+            .product-image {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 12vw;
+                    height: 20vw;
+                    object-fit: cover;
+                    border-radius: 6px;
+
+                }
+            }
+        }
+
+    }
+
+    .furniture {
+        @extend .healthcare;
+
+        .produc-card {
+            background-color: $tertiary-color;
+
+        }
+
+    }
+}
+
+.abouts-us {
+
+    padding-bottom: 2rem;
+
+    h2 {
+        padding-bottom: 60px;
+        font-weight: bold;
+    }
+
+
+
+    .mission-section {
+        @include flexCenter(row, space-around, center);
+
+        .earth {
+            width: 40%;
+            @include flexCenter(row);
+            color: #E86424;
+            gap: 40px;
+
+            p {
+                text-align: center;
+                margin: auto 0;
+            }
+
+            img {
+                object-fit:fill;
+            }
+        }
+        .innovation {
+            @extend .earth
+        }
+    }
+
+}
+
+.gallery {
+
+    width:40%;
+    min-height:20vh;
+    outline: 10px solid $quaternary-color;
+    margin: auto;
+    max-width: 40rem;
+    @include neo(1, 1em, 1em);
+    overflow: hidden;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(min(350px,100%),1fr));
+
+
+
+
+
+
+
+    
+
+    h2 {
+        font-weight: bold;
+        padding-top: 40px;
+        padding-bottom: 20PX;
+    }
+
+    .gallery-img {
+        width: 300%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content:space-around;
+        align-items:center;
+        @include neo(1, 1em, 1em);
+        object-fit: contain;
+        padding: .5rem;
+        transition: all .5s ease;
+        transform: translateX(0%);
+
+
+
+
+    }
+
+    img {
+        width: calc(100% / 3 - 3em);
+        max-height: 50vh;
+
+        
+        object-position: 5px 34%;
+        border-radius: 16px;
+        transition: all ease-in 400ms;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    .puntos {
+        width: 100%;
+        margin: 1em 0 0;
+        padding: .4em;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .punto {
+        width: 2em;
+        height: 2em;
+        margin: 1em 1em 0;
+        @include neo(1, 1em, .6em);
+    }
+    .punto.activo {
+        background-color: $quaternary-color;
+    }
+}
+.location {
+    color: #E86424;
+    h2 {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    .map {
+        @include flexCenter(row, center, center);
+        padding-bottom: 50px;
+        background: black;
+        align-content: start;
+    }
+}
+p,
+h3 {
+    padding: 10px;
+    font-size: $paragrap-size;
+}
+
+#overlay {
+    
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color:($primary-color); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#overlay-text{
+ 
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     
+     margin: auto 0;
+     white-space: nowrap;
+    font-size: 2rem;
+     color:$quaternary-color;
+     
+     
+     
+     @media (max-width: 720px) {
+     
+        white-space: nowrap;
+        font-size: 2rem;
+        color: #E86424;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+    
+        
+    }
+}
+
+
+
+
+footer {
+    background-color: $quaternary-color;
+    width: 100%;
+    height: auto;
+    padding: 40px;
+    color: white;
+    .social-media {
+       @include flexCenter(row, center, center);
+        gap: 40px;
+        padding: 50px;
+    }
+}
